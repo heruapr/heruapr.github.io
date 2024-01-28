@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>heruapr portal</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: "Courier New", monospace;
-    }
+  <head>
+    <title>heruapr portal</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Courier New", monospace;
+      }
 
-    #typing-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+      body {
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        min-height: 100vh;
+      }
 
-    #typing-text {
-      font-size: 40px;
-      white-space: pre;
-      margin-bottom: 30px;
-    }
-  </style>
-</head>
-<body>
-  <div id="typing-container">
-    <h1>Oops!</h1>
-    <div id="typing-text"></div>
-    <img src="icebear.png" alt="Image" width="500" height="300">
-    <h2>-heruapr</h2>
-  </div>
+      #background-img {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
+
+      #typing-container {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+      }
+
+      #typing-text {
+        font-size: 40px;
+        white-space: pre;
+        margin-bottom: 50px;
+      }
+      #text-container {
+        position: absolute;
+        top: 150px;
+        left: 100px;
+        color: white;
+        font-size: 18px;
+        font-family: Serif, Palatino;
+      }
+
+      #social-icons {
+        position: absolute;
+        top: 50px; /* Adjust the distance from the top as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center; /* Center items horizontally */
+      }
+
+      #social-icons a img {
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="background-img"
+      src="images/heru portrait.png"
+      alt="Background Image"
+    />
+    <div id="text-container">
+      <h1>Hi Friends!</h1>
+      <div id="typing-container">
+        <div id="typing-text"></div>
+      </div>
+      <h2>heruapr.dev@gmail.com</h2>
+    </div>
+    <div id="social-icons">
+      <a href="https://github.com/heruapr" target="_blank"
+        ><img src="images/github-mark-white.png" alt="Github"
+      /></a>
+      <a href="https://www.linkedin.com/in/heru-apriadi" target="_blank"
+        ><img src="images/linked-in-white.png" alt="Linkdin"
+      /></a>
+      <a href="https://medium.com/@heruapr.dev" target="_blank"
+        ><img src="images/medium.png" alt="medium"
+      /></a>
+    </div>
 
     <script>
-      const text = "This page is under construction.";
-      const typingDelay = 100; // Delay between each character (in milliseconds)
-      const pauseDelay = 1500; // Delay at the end before starting again (in milliseconds)
+      const text = "I am Heru.";
+      const typingDelay = 100;
+      const pauseDelay = 1500;
 
-      let charIndex = 0;
+      let charIndex = 1;
 
       function type() {
         const typingText = document.getElementById("typing-text");
@@ -48,7 +108,7 @@
           charIndex++;
           setTimeout(type, typingDelay);
         } else {
-          charIndex = 0;
+          charIndex = 1;
           setTimeout(type, pauseDelay);
         }
       }

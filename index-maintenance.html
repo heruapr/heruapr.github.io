@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>heruapr portal</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Courier New", monospace;
+    }
+
+    #typing-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #typing-text {
+      font-size: 40px;
+      white-space: pre;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="typing-container">
+    <h1>Oops!</h1>
+    <div id="typing-text"></div>
+    <img src="icebear.png" alt="Image" width="500" height="300">
+    <h2>-heruapr</h2>
+  </div>
+
+    <script>
+      const text = "This page is under construction.";
+      const typingDelay = 100; // Delay between each character (in milliseconds)
+      const pauseDelay = 1500; // Delay at the end before starting again (in milliseconds)
+
+      let charIndex = 0;
+
+      function type() {
+        const typingText = document.getElementById("typing-text");
+        typingText.textContent = text.substring(0, charIndex);
+
+        if (charIndex < text.length) {
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          charIndex = 0;
+          setTimeout(type, pauseDelay);
+        }
+      }
+
+      type();
+    </script>
+  </body>
+</html>
